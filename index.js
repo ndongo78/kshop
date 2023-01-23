@@ -13,10 +13,14 @@ const favoriteRouter = require('./route/FavoriteRouter');
 require("dotenv").config();
 
 
+
 const app=express()
 app.use(cors())
 app.use(express.json())
 
+app.get('/',(req,res)=>{
+  res.send('welcome to kshop')
+})
 app.use('/users',userRouter);
 app.use('/category',categorieRouter)
 app.use('/article',articleRouter)
